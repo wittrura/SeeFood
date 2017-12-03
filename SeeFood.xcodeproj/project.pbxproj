@@ -12,6 +12,7 @@
 		16D0BDD71FD3DCD4004C6D2E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 16D0BDD51FD3DCD4004C6D2E /* Main.storyboard */; };
 		16D0BDD91FD3DCD4004C6D2E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 16D0BDD81FD3DCD4004C6D2E /* Assets.xcassets */; };
 		16D0BDDC1FD3DCD4004C6D2E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 16D0BDDA1FD3DCD4004C6D2E /* LaunchScreen.storyboard */; };
+		16D0BDE41FD3DE81004C6D2E /* Inceptionv3.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 16D0BDE31FD3DE81004C6D2E /* Inceptionv3.mlmodel */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +23,7 @@
 		16D0BDD81FD3DCD4004C6D2E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		16D0BDDB1FD3DCD4004C6D2E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		16D0BDDD1FD3DCD4004C6D2E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		16D0BDE31FD3DE81004C6D2E /* Inceptionv3.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = Inceptionv3.mlmodel; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,6 +62,7 @@
 				16D0BDD81FD3DCD4004C6D2E /* Assets.xcassets */,
 				16D0BDDA1FD3DCD4004C6D2E /* LaunchScreen.storyboard */,
 				16D0BDDD1FD3DCD4004C6D2E /* Info.plist */,
+				16D0BDE31FD3DE81004C6D2E /* Inceptionv3.mlmodel */,
 			);
 			path = SeeFood;
 			sourceTree = "<group>";
@@ -137,6 +140,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				16D0BDD41FD3DCD4004C6D2E /* ViewController.swift in Sources */,
+				16D0BDE41FD3DE81004C6D2E /* Inceptionv3.mlmodel in Sources */,
 				16D0BDD21FD3DCD4004C6D2E /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -278,7 +282,7 @@
 				DEVELOPMENT_TEAM = 47GDWEFLEB;
 				INFOPLIST_FILE = SeeFood/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.ryanwittrup.SeeFood;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.ryanwittrup.Hello-World";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -293,7 +297,7 @@
 				DEVELOPMENT_TEAM = 47GDWEFLEB;
 				INFOPLIST_FILE = SeeFood/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.ryanwittrup.SeeFood;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.ryanwittrup.Hello-World";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
