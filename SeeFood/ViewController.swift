@@ -33,16 +33,45 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
             
             //set image view in the background of the app to the image that was selected
             imageView.image = userSelectedImage
+            
+            //convert UIImage to CIImage (core image) to be used by Vision and Core ML
+            guard let ciImage = CIImage(image: userSelectedImage) else {
+                fatalError("Could not convert UIImage to CIImage")
+            }
+            
+            detect(image: ciImage)
         }
         
         imagePicker.dismiss(animated: true, completion: nil)
+    }
+    
+    func detect(image: CIImage) -> Void {
+        //attemp to load CoreML Model
+        guard let model = try? VNCoreMLModel(for: Inceptionv3().model) else {
+            fatalError("Loading CoreML Model failed")
+        }
+        
+        let request = VNCoreMLRequest(model: model) { (request, error) in
+            guard let results = request.results as? [VNClassificationObservation] else {
+                fatalError("Model failed to process image")
+            }
+            
+            print(results)
+        }
+        
+        let handler = VNImageRequestHandler(ciImage: image)
+        
+        do {
+            try handler.perform([request])
+        } catch {
+            print(error)
+        }
     }
 
     @IBAction func cameraTapped(_ sender: UIBarButtonItem) {
         //display image that was taken by the user
         present(imagePicker, animated: true, completion: nil)
     }
-    
     
 }
 
