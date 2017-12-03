@@ -7,19 +7,42 @@
 //
 
 import UIKit
+import CoreML
+import Vision
 
-class ViewController: UIViewController {
+class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
 
+    @IBOutlet weak var imageView: UIImageView!
+    
+    let imagePicker = UIImagePickerController()
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+        
+        //set imagePicker delegate as current class, getting data from camera and disabling editing
+        imagePicker.delegate = self
+        imagePicker.sourceType = .camera
+        imagePicker.allowsEditing = false
+    }
+    
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
+        
+        //acess image user has selected, use optional binding with downcasting
+        if let userSelectedImage = info[UIImagePickerControllerOriginalImage] as? UIImage {
+            
+            //set image view in the background of the app to the image that was selected
+            imageView.image = userSelectedImage
+        }
+        
+        imagePicker.dismiss(animated: true, completion: nil)
     }
 
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+    @IBAction func cameraTapped(_ sender: UIBarButtonItem) {
+        //display image that was taken by the user
+        present(imagePicker, animated: true, completion: nil)
     }
-
-
+    
+    
 }
 
