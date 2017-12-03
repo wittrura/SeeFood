@@ -56,7 +56,14 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
                 fatalError("Model failed to process image")
             }
             
-            print(results)
+            //check in results for first item aka highest confidence interval VNClassificationObservation
+            if let firstResult = results.first {
+                if firstResult.identifier.contains("hotdog") {
+                    self.navigationItem.title = "Hotdog! \(firstResult.confidence)"
+                } else {
+                    self.navigationItem.title = "Not Hotdog! (probably a \(firstResult.identifier)"
+                }
+            }
         }
         
         let handler = VNImageRequestHandler(ciImage: image)
